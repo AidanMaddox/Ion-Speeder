@@ -1,5 +1,7 @@
 import g4p_controls.*;
 
+
+
 import ddf.minim.*;
 import g4p_controls.*;
 
@@ -16,11 +18,15 @@ int qw = 0;
 int qb = 0;
 int bx = px;
 int by = py;
+int score=0;
+
+
+
 
 
 Minim minim;
 AudioPlayer player;
-//Fuel f1=new Fuel();
+Fuel f1=new Fuel();
 Rock r1=new Rock();
 Rock r2=new Rock();
 Rock r3=new Rock();
@@ -28,6 +34,7 @@ Rock r4=new Rock();
 Rock r5=new Rock();
 Health h1=new Health();
 Shield s1=new Shield();
+
 
 
 float bullet;
@@ -49,8 +56,8 @@ void draw() {
 
   background(img);
   //background(50);
-  //f1.display();
-  //f1.motion();
+  f1.display();
+  f1.motion();
   r1.move();
   r1.display();
   r2.move();
@@ -63,6 +70,9 @@ void draw() {
   r5.display();
   h1.display();
   s1.display();
+ 
+ 
+
   if (qb==1) {
     b1.move();
     b1.display();

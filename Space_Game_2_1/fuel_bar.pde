@@ -1,4 +1,4 @@
-/*class Fuel {
+class Fuel {
   
   void motion(){
     
@@ -8,10 +8,10 @@
   }
   void display() {
     for (int i = 0; i<=playerF; i++) {
-      fill(255, 0, 0);
-      stroke(255, 0, 0);
+      fill(0, 255, 0);
+      stroke(0,255, 0);
       rect(20, 300+(i*2), 10, 10);
     }
   }
 }
-*/
+

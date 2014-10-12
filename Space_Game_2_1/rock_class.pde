@@ -1,15 +1,14 @@
-class Rock {
+public class Rock {
 
-   float rockSpeed = random(10, 20);
+  float rockSpeed = random(10, 20);
   float rockX = random(3, 888);//location of rock falling
-  float rockH = random(40, 80);//rock height
+float rockH = random(40, 80);//rock height
  float rockW = rockH;//rock width = the random height
  float rockY =0;
 float randomX = random(3, 888);
 float image1 = random(1,40);
-
   float rock=random(1, 4);
-
+  int score=0;
 
   void display()
   {
@@ -31,8 +30,7 @@ imageMode(CENTER);
       image(rock4, rockX, rockY, rockH, rockW);
     }
     
-    
-    
+  
 
   }
   void move()
@@ -52,7 +50,7 @@ imageMode(CENTER);
       qw = 0;
     }
     if (rockX>=px-(13+rockW/2) && rockX<=px+(13+rockW/2) && playerS>=0 && rockY>=py-(13+rockH/2) && rockY<=py+(13+rockH/2)&& q<1000) {
-      playerS=playerS-20;
+      playerS=playerS-rockH/3;
       fill(0, 0, 250);
       ellipse(px, py, 150, 150);
 
@@ -66,7 +64,7 @@ imageMode(CENTER);
     }
 
     if (rockX>=px-(13+rockW/2) && rockX<=px+(13+rockW/2) && playerH>=0 && rockY>=py-(13+rockH/2) && rockY<=py+(13+rockH/2)&& playerS<=0 && q<1000) {
-      playerH=playerH-15;
+      playerH=playerH-rockH/3;
       stroke(255, 0, 0);
       fill(200, 0, 0);
       ellipse(px, py, 150, 150);
