@@ -25,6 +25,7 @@ Rock r1=new Rock();
 Rock r2=new Rock();
 Rock r3=new Rock();
 Rock r4=new Rock();
+Rock r5=new Rock();
 Health h1=new Health();
 Shield s1=new Shield();
 
@@ -58,6 +59,8 @@ void draw() {
   r3.display();
   r4.move();
   r4.display();
+  r5.move();
+  r5.display();
   h1.display();
   s1.display();
   if (qb==1) {
