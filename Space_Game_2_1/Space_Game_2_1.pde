@@ -86,25 +86,25 @@ void draw() {
   imageMode(CENTER);
   image(pl, px, py, 100, 100);
   if (keyPressed && playerH>0 && playerF>0) {
-    if (key == 'a' || key=='A'||key=="LEFT") {
+    if (key == 'a' || key=='A') {
       if (px>30) {
         px= px-20;
       }
     }
 
-    if (key =='d'|| key=='D'||key=="RIGHT") {
+    if (key =='d'|| key=='D') {
       if (px<870) {
         px= px+20;
       }
     }
 
-    if (key =='w'|| key=='W'||key=="RIGHT") {
+    if (key =='w'|| key=='W') {
       if (py>35) {
         py=py-20;
       }
     }
 
-    if (key =='s'||key=='S'||key=="DOWN") {
+    if (key =='s'||key=='S') {
       if (py<550) {
         py=py+20;
       }
