@@ -8,7 +8,7 @@ float rockH = random(40, 80);//rock height
 float randomX = random(3, 888);
 float image1 = random(1,40);
   float rock=random(1, 4);
-  int score=0;
+  
 
   void display()
   {
@@ -30,7 +30,9 @@ imageMode(CENTER);
       image(rock4, rockX, rockY, rockH, rockW);
     }
     
-  
+  if (rockY>height+rockH-rockSpeed){
+    score=score+1;
+  }
 
   }
   void move()
@@ -77,6 +79,7 @@ imageMode(CENTER);
       q=q+1;
       qw = 0;
     }
+
   }
 }
 

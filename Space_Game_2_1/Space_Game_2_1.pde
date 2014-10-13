@@ -1,5 +1,7 @@
 import g4p_controls.*;
 
+import g4p_controls.*;
+
 
 
 import ddf.minim.*;
@@ -10,7 +12,8 @@ int px=450;//player X
 int py=530;
 float playerH=100;//playerH = health
 float playerS=100;//playerS=shield
-float playerF=50;
+float playerF=100;
+int playerFint =(int)playerF;
 float q = 0;
 PImage img;
 PImage pl;
@@ -19,6 +22,8 @@ int qb = 0;
 int bx = px;
 int by = py;
 int score=0;
+int level = 0;
+
 
 
 
@@ -37,6 +42,8 @@ Shield s1=new Shield();
 
 
 
+
+
 float bullet;
 void setup() {
   size(900, 600);
@@ -51,13 +58,30 @@ void setup() {
 Bullet b1 = new Bullet();
 
 void draw() {
-
+  PImage is;
+  is= loadImage("starry-sky.png");
+ if(level == 5){
+  background(is);
+  textSize(100);
+  text("GAME PAUSED",width/2-400,200);
+ }
+   
+if (level == 0){
+  
+  background(is);
+  textSize(75);
+  text("Europa",width/2-200,75);
+  textSize(45);
+  text("Click S To Start",width/2-100,height/2);
+}
+ if(level == 1){ 
   img=loadImage("starry-sky.png");
 
   background(img);
   //background(50);
   f1.display();
   f1.motion();
+  f1.fuel();
   r1.move();
   r1.display();
   r2.move();
@@ -70,6 +94,8 @@ void draw() {
   r5.display();
   h1.display();
   s1.display();
+  textSize(30);
+   text(score,width/2-10,30);
  
  
 
@@ -128,6 +154,23 @@ void draw() {
     }
     if(key=='r'||key=='R'){
       
+    }
+  }
+  }
+  if(keyPressed){
+    if(key == 'S'||key=='s'){
+      level=1;
+    }
+    if(key=='m'||key=='M'){
+      level=0;
+      playerS=100;
+      playerH=100;
+      playerF=100;
+      score=0;
+      q=0;
+    }
+    if(key=='p'||key=='P'){
+      level=5;
     }
   }
 }
