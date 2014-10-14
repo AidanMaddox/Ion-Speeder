@@ -23,6 +23,7 @@ int bx = px;
 int by = py;
 int score=0;
 int level = 0;
+int game = 1;
 
 
 
@@ -37,6 +38,17 @@ Rock r2=new Rock();
 Rock r3=new Rock();
 Rock r4=new Rock();
 Rock r5=new Rock();
+Rock r6=new Rock();
+Rock r7=new Rock();
+Rock r8=new Rock();
+Rock r9=new Rock();
+Rock r10=new Rock();
+Rock r11=new Rock();
+Rock r12=new Rock();
+Rock r13=new Rock();
+Rock r14=new Rock();
+Rock r15=new Rock();
+Rock r16=new Rock();
 Health h1=new Health();
 Shield s1=new Shield();
 
@@ -47,6 +59,7 @@ Shield s1=new Shield();
 float bullet;
 void setup() {
   size(900, 600);
+
 
   minim = new Minim(this);
   player = minim.loadFile("Turn Down For What (8-Bit NES Remix).mp3");
@@ -72,13 +85,14 @@ if (level == 0){
   textSize(75);
   text("Europa",width/2-200,75);
   textSize(45);
-  text("Click S To Start",width/2-100,height/2);
+  text("Press S To Start",width/2-100,height/2);
 }
  if(level == 1){ 
   img=loadImage("starry-sky.png");
 
   background(img);
   //background(50);
+ 
   f1.display();
   f1.motion();
   f1.fuel();
@@ -95,9 +109,40 @@ if (level == 0){
   h1.display();
   s1.display();
   textSize(30);
-   text(score,width/2-10,30);
- 
- 
+   text(score,width/2-30,30);
+ if (score>30){
+   r6.display();
+   r6.move();
+ }
+ if(score>60){
+   r7.display();
+   r7.move();
+ }
+ if(score>90){
+   r8.display();
+   r8.move();
+ }
+ if(score>200){
+   r9.display();
+    r10.display();
+     r11.display();
+      r12.display();
+      r9.move();
+        r10.move();
+          r11.move();
+            r12.move();
+             
+ }
+ if(score>400){
+   r13.display();
+   r14.display();
+   r15.display();
+   r16.display();
+  r13.move();
+   r14.move();
+    r15.move();
+     r16.move();
+ }
 
   if (qb==1) {
     b1.move();
@@ -114,6 +159,9 @@ if (level == 0){
     text("GAME OVER", height/2, width/2);
     
   }
+  if(game == 2){
+    
+  }
 
 
 
@@ -124,25 +172,25 @@ if (level == 0){
   if (keyPressed && playerH>0 && playerF>0) {
     if (key == 'a' || key=='A') {
       if (px>30) {
-        px= px-20;
+        px= px-30;
       }
     }
 
     if (key =='d'|| key=='D') {
       if (px<870) {
-        px= px+20;
+        px= px+30;
       }
     }
 
     if (key =='w'|| key=='W') {
       if (py>35) {
-        py=py-20;
+        py=py-30;
       }
     }
 
     if (key =='s'||key=='S') {
       if (py<550) {
-        py=py+20;
+        py=py+30;
       }
     }
   }
@@ -171,6 +219,9 @@ if (level == 0){
     }
     if(key=='p'||key=='P'){
       level=5;
+    }
+    if(key =='q'||key=='Q'){
+      exit();
     }
   }
 }
